@@ -83,11 +83,11 @@
 > 🦊 MetaMask
 >
 > Browser (Chrome, Opera, Firefox, OperaGX, Edge, Brave, Yandex)
-
+> 
 > Passwords, Cookies, Autofill & History (Searches for specific keywords such as PayPal, Coinbase etc. in them)
-
+> 
 > Telegram Session Stealer
->
+>  
 > Screenshot(s)
 
 #### Additional
