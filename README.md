@@ -13,9 +13,9 @@
 </p>
 
 <p align="center">
-<img src="https://img.shields.io/github/last-commit/AliTefeli02/TurkoRat?style=flat">
-<img src="https://img.shields.io/github/stars/AliTefeli02/TurkoRat?color=brightgreen">
-<img src="https://img.shields.io/github/forks/AliTefeli02/TurkoRat?color=brightgreen">
+<img src="https://img.shields.io/github/last-commit/cryst4linqq/TurkoRat?style=flat">
+<img src="https://img.shields.io/github/stars/cryst4linqq/TurkoRat?color=brightgreen">
+<img src="https://img.shields.io/github/forks/cryst4linqq/TurkoRat?color=brightgreen">
 </p>
 
 <p align="center">
