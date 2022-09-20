@@ -20,6 +20,7 @@
 
 <p align="center">
   Telegram server: https://t.me/turcoflex
+  Discord server: https://discord.gg/v6xwtcgrQ5
  </p>
 
 ## 🌐 〢 Content
