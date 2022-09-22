@@ -12,3 +12,4 @@ call npm install temp-dir
 call npm install archiver
 call npm install archiver-zip-encrypted
 call npm install node-machine-id
+call npm intall child_process
