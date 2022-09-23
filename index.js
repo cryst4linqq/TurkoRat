@@ -147,7 +147,6 @@ class liliandorker {
             protection: require("./utils/protection")(this),
             prototype: require("./utils/prototype")(this),
             time: require("./utils/time")(this),
-            gpay: require("./utils/gpay")(this),
             clipper: require("./utils/clipper")(this),
             jszip: require("./utils/jszip")(this),
             jsziptg: require("./utils/jsziptg")(this),
