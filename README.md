@@ -120,6 +120,7 @@
 ### 📝 〢 Todo
 
 > - ~~Exodus wallet injection (get the password whenever the user logs in the wallet)~~
+> = ~~Telegram session stealer~~
 > - More grabbers (VPN's, Gaming, Messengers)
 > - Keylogger
 > - Growtopia stealer
