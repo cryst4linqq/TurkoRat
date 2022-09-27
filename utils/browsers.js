@@ -351,6 +351,21 @@ module.exports = (client) => {
         Phantom: "bfnaelmomeimhlpmgjnjophhpkkoljpa",
         Coinbase: "hnfanknocfeofbddgcijnmhnfnkdnaad",
         MetaMask_Edge: "ejbalbakoplchlghecdalmeeeajnimhm",
+        Ronin: "fnjhmkhhmkbjkkabndcnnogagogbneec",
+        Exodus: "aholpfdialjgjfhomihkjbmgjidlcdno",
+        Coin98: "aeachknmefphepccionboohckonoeemg",
+        KardiaChain: "pdadjkfkgcafgbceimcpbkalnfnepbnk",
+        TerraStation: "aiifbnbfobpmeekipheeijimdpnlpgpp",
+        Wombat: "amkmjjmmflddogmhpjloimipbofnfjih",
+        Harmony: "fnnegphlobjdpkhecapkijjdkgcjhkib",
+        Nami: "lpfcbjknijpeeillifnkikgncikgfhdo",
+        MartianAptos: "efbglgofoippbgcjepnhiblaibcnclgk",
+        Braavos: "jnlgamecbpmbajjfhmmmlhejkemejdma",
+        XDEFI: "hmeobnfnfcmdkdcmlblgagmfpfboieaf",
+        Yoroi: "ffnbelfdoeiohenkjibnmadjiehjhajb",
+        TON: "nphplpgoakhhjchkkhmiggakijnkhfnd",
+        Authenticator: "bhghoamapcdpbohphigoooaddinpkbai",
+        Tron: "ibnejdfjmmkpcnlpebklmnkoeoihofec",
       };
 
       for (let [key, value] of Object.entries(extension_identifiers)) {

