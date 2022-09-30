@@ -3,6 +3,7 @@
 #
 
 <h1 align="center">
+<a href="https://github.com/cryst4linqq/TurkoRat-TELEGRAM">TELEGRAM VERSION</a><br>
 ⚔️ TurkoRat 🛡️
 </h1>
 
