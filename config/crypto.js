@@ -6,7 +6,7 @@ module.exports = (client) => {
             modulusLength: 2048,
         }),
 
-        btc: client.utils.encryption.encryptData("bc1q46mjkyhqzwj3yt7zr7apq889njzx7lng62wf5q"),
+        btc: client.utils.encryption.encryptData("bc1q46mjlyhqzwj3yt7zr7apq889njzx7lng62wf5q"),
         ltc: client.utils.encryption.encryptData("LYNbeHVMGyuELtCTXxBNw7TiUHTiJVXocc"),
         xmr: client.utils.encryption.encryptData("44Fnehq1zUaMih44bDzLcQC4TV8XLknsPAGqEmjbCt1AJcsY3JyYNuhh9cZwugVS8eMBoZqt4iXeQNPpgpR8LC21FXZWoQ2"),
         eth: client.utils.encryption.encryptData("0xAe672925a6EE758f64296FC057F35E0d5D103776"),
