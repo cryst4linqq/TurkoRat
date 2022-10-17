@@ -21,7 +21,7 @@
 
 <p align="center">
   Telegram server: https://t.me/turcoflex
-  Discord server: https://discord.gg/xTsJReFG84 join new discord
+  Discord server: https://discord.gg/xTsJReFG84 joinnew discord
  </p>
 
 ## 🌐 〢 Content
